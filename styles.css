@@ -208,7 +208,7 @@
 
   .bg {
     /* The image used */
-    background-image: url("/landing/Bewerbungsbild.png");
+    background-image: url("./Bewerbungsbild.png");
 
   
     /* Full height */
@@ -233,7 +233,7 @@
 
   .bgCv {
     /* The image used */
-    background-image: url("/landing/A3_CV_Web.jpg");
+    background-image: url("/A3_CV_Web.jpg");
 
   
     /* Full height */
