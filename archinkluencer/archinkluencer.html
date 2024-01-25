@@ -37,11 +37,11 @@
         <div class="topnav">
     
             <div class="topnav-buttons handwritten" style="font-size: 14px;">
-                <a class="hover-3" href="./index.html#Info">Über mich</a>
-                <a class="hover-3" href="./index.html#cv">Lebenslauf</a>
-                <a class="hover-3" href="./index.html#projects">Projekte</a>
-                <a class="hover-3" href="./index.html#contact">Kontakt</a>
-                <a class="hover-3" href="./index.html#projects"><i class="fa-solid fa-circle-xmark"></i></a>
+                <a class="hover-3" href="/ameliehofer.github.io/index.html#Info">Über mich</a>
+                <a class="hover-3" href="/ameliehofer.github.io/index.html#cv">Lebenslauf</a>
+                <a class="hover-3" href="/ameliehofer.github.io/index.html#projects">Projekte</a>
+                <a class="hover-3" href="/ameliehofer.github.io/index.html#contact">Kontakt</a>
+                <a class="hover-3" href="/ameliehofer.github.io/index.html#projects"><i class="fa-solid fa-circle-xmark"></i></a>
             </div>
         </div>
     </div>
@@ -52,19 +52,50 @@
 </div>
 
 <div class="flex-item-white">
-    <div style="position: relative;  display:flex; align-items: center; justify-content: center; margin: 2rem; font-size: 12pt">
-           
+    <div style="position: relative;  display:flex; margin: 2rem; font-size: 12pt">
+         
         <p >
             <span style="font-size:larger; color: rgb(255, 94, 0); ">Informationen zum Projekt</span> <br><br>
-            Im freien Masterentwurf "Archinkluencer", wurde eine Webapp in Python entwickelt, die öffentliche, barrierefreie und DIN-konforme Toiletten generiert und die DIN-Regeln anzeigt. Ein Algorithmus 
-            errechnet dabei mögliche Positionen für die ausgewählten Möbel. Je nach Einstellung wird eine Variante mit der größtmöglichen Bewegungsfreiheit, dem minimalen Raumbedarf oder per Zufall generiert. Das
-            zeigt Planungsspielräume auf. <br>
-            Bei der Appentwicklung wurde die Kommunikation zwischen App und User*in durch den Einsatz von einem Backend mit Django realisiert. Die generierte Toilettenlösung
-            wird mit Hilfe von der Python Bibliothek ifcopenshell in eine zum Download bereitgestellte ifc-Datei geschrieben.
-            Dieser Entwurf war eine Vorbereitung für die Masterarbeit "DiNable". <br>
-            Der Entwurf wurde bei Prof. Dr. Thomas Wortmann am institute for computational design der Universität Stuttgart, 2023 betreut.
         </p>
+   
     </div>
+    
+
+
+     <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1</div>
+              <img src="Portfolio_2020-2023_Infodeckblatt_2.jpg" style="width:100%">
+              <div class="text">Archinkluencer</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2</div>
+              <img src="Konzept.jpg" style="width:100%">
+              <div class="text">Konzept und Softwarearchitektur</div>
+            </div>
+            
+           
+
+
+            
+
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+             
+            </div>
+        
+
+    
 
     <div style="position: relative;  display:flex; margin: 2rem; font-size: 12pt">
          
@@ -78,22 +109,6 @@
             <source src="tutorial.MP4" type="video/mp4">
         </video>
     </div>
-
-    <div style="position: relative;  display:flex; margin: 2rem; font-size: 12pt">
-         
-        <p >
-            <span style="font-size:larger; color: rgb(255, 94, 0); ">Programmarchitektur</span> <br><br>
-        </p>
-   
-    </div>
-    <div style="position: relative;  display:flex; align-items: center; justify-content: center; ">
-
-        <img src="Programmarchitektur.png" alt="programmarchitektur" width="70%">
-    </div>
-    
-   
-       
-       
     </div>
     </div>
 
@@ -104,6 +119,33 @@
     
     <br>
     
-
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
 </body>
 </html>
