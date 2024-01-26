@@ -368,7 +368,7 @@
 .pie {
   --p:20;
   --b:25px;
-  --c:darkred;
+  --c:--orange-color;
   --w:150px;
 
   width: var(--w);
@@ -389,7 +389,7 @@
 .pie:before {
   inset: 0;
   background:
- 
+    radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
     conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
 
   -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
