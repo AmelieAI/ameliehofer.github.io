@@ -15,7 +15,9 @@
   
   html,
   body {
-    overflow: scroll;
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
     font-family: "Poppins", sans-serif;
   }
   
@@ -423,12 +425,12 @@
 
   background-color: white; 
   border: solid 2px lightgrey; 
-  width: 95vw; 
+
   position: relative; 
   left: 2vw;
   border-bottom-right-radius: 225px 19px;
   border-bottom-left-radius: 15px 255px;
-  box-shadow: 5px 5px 10px  grey;
+  
   font-size: 12px;
   margin-top: 65px;
  
