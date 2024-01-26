@@ -66,14 +66,6 @@
 </div>
 
 
-<div id="cv" >
-    <div class="headingDIV" >
-        <h2 class="heading" style="width:fit-content; white-space: no-wrap;  ">Lebenslauf <span style="color: rgb(255, 94, 0) ; font-size: 60px">.</span></h2>
-    </div>
-
- <img src="A3_CV_Web.jpg" style="width:180vw; margin-left: -40vw  ">
-
-</div>
 
 
 
@@ -152,6 +144,66 @@
 <div style="height: 2rem;"></div>
 
 
+<div id="cv" >
+    <div class="headingDIV" >
+        <h2 class="heading" style="width:fit-content; white-space: no-wrap;  ">Lebenslauf <span style="color: rgb(255, 94, 0) ; font-size: 60px">.</span></h2>
+    </div>
+
+ <img src="A3_CV_Web.jpg" style="width:180vw; margin-left: -40vw  ">
+
+</div>
+
+
+<div class="headingDIV" >
+    <h2 class="heading" style="width:fit-content; white-space: no-wrap;  ">Skills <span style="color: rgb(255, 94, 0) ; font-size: 60px">.</span></h2>
+</div>
+<div class="square-wrapper">
+
+    <div class="square square-transition" style="display: flex; justify-content: center;">
+        
+        <div class="pie" style="--p:90;--c:gray;--b:10px"> Vectorworks </div>
+        <div class="pie" style="--p:40;--c:gray;--b:10px"> Revit </div>
+        <div class="pie " style="--p:70;--c:gray;--b:10px"> Twinmotion </div>
+        <div class="pie " style="--p:50;--c:gray;--b:10px"> Adobe </div>
+
+        <div class="pie " style="--p:80;--c:gray;--b:10px"> JavaScript </div>
+        <div class="pie " style="--p:70;--c:gray;--b:10px"> Python </div>
+    </div>
+ </div>
+
+
+  <script>
+    // Remove the transition class
+const square = document.querySelector('.square');
+square.classList.remove('square-transition');
+
+const pie = document.querySelectorAll('.pie');
+for(let i = 0; i < pie.length; i++){
+    pie[i].classList.remove('animate');
+}
+
+
+// Create the observer, same as before:
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      square.classList.add('square-transition');
+      for(let i = 0; i < pie.length; i++){
+        pie[i].classList.add('animate');
+    }
+      return;
+    }
+
+    square.classList.remove('square-transition');
+    for(let i = 0; i < pie.length; i++){
+        pie[i].classList.remove('animate');
+    }
+  });
+});
+
+
+observer.observe(document.querySelector('.square-wrapper'));
+  </script>
 <footer >
 
 

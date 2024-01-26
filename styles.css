@@ -213,6 +213,7 @@
   
     /* Full height */
     height: 130vh; 
+    width: 100vw;
     /* min-height: 500px; */
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -356,3 +357,95 @@
   /* --_p: 0%;
   --_s: 0.3s; */
 }
+
+
+@property --p{
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+}
+
+.pie {
+  --p:20;
+  --b:25px;
+  --c:darkred;
+  --w:150px;
+
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  margin: 5px;
+  place-content: center;
+  font-size: 15px;
+
+}
+.pie:before,
+.pie:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.pie:before {
+  inset: 0;
+  background:
+ 
+    conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+          mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.pie:after {
+  inset: calc(50% - var(--b)/2);
+  background: var(--c);
+  transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+}
+.animate {
+  animation: p 1s .5s both;
+}
+
+.no-round:before {
+  background-size: 0 0, auto;
+}
+.no-round:after {
+  content: none;
+}
+@keyframes p{
+  from{--p:0}
+}
+
+
+
+.square {
+
+  opacity: 0;
+  transform: scale(1.2);
+
+  background-color: white; 
+  border: solid 2px lightgrey; 
+  width: 95vw; 
+  position: relative; 
+  left: 2vw;
+  border-bottom-right-radius: 225px 19px;
+  border-bottom-left-radius: 15px 255px;
+  box-shadow: 5px 5px 10px  grey;
+  font-size: 12px;
+  margin-top: 65px;
+ 
+  margin-right: 3rem;
+  margin-bottom: 5rem;
+  padding: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+.square {
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+}
+
+.square-transition {
+  opacity: 1;
+  transform: none;
+}
+
+
