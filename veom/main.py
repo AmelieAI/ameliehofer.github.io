@@ -34,6 +34,7 @@ def main():
     camera.lookAt(0,0,0)
     scene.add(camera)
 
+    print(window.innerWidth,window.innerHeight )
     # lighting
     directional_light = THREE.DirectionalLight.new(back_color, 1.0)
     ambient_light = THREE.AmbientLight.new(back_color)
